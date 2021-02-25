@@ -1,7 +1,7 @@
-resource "aws_route53_record" "www3" {
+resource "aws_route53_record" "test" {
     zone_id = "Z02359711T30YFCJC6RSO"
-    name = "virtualcloudmaster.com"
+    name = "test.virtualcloudmaster.com"
     type = "A"
     ttl = "30"
-    records = [aws_instance.web.publice_ip]
+    records = [aws_instance.web.public_ip]
 }
