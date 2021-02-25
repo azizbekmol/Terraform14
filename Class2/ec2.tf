@@ -6,7 +6,7 @@ resource "aws_instance" "web" {
   availability_zone           = "us-east-1a"
   vpc_security_group_ids      = [aws_security_group.allow_tls.id]
   user_data                   = file("userdata.sh")
-  
+
   tags = {
     "Name" = "Aziz"
   }
