@@ -1,4 +1,7 @@
 resource "null_resource" "script" {
+    triggers = {
+        always_run = "${timestamp()}"
+    }
     provisioner "remote-exec" {
         inline = [
             "sudo yum install httpd -y",
