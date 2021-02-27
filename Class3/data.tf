@@ -59,5 +59,16 @@ resource "aws_instance" "web" {
         private_key = file("~/.ssh/id_rsa")
         host    = aws_instance.web.public_ip
     }
+    }
+  provisioner "file" {
+      source = "user.sh"
+      destination = "/tmp/user.sh"
+      
+    connection {
+        type    = "ssh"
+        user    = "centos"
+        private_key = file("~/.ssh/id_rsa")
+        host    = aws_instance.web.public_ip
+    }
   }
 }
