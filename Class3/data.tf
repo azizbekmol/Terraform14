@@ -47,28 +47,4 @@ resource "aws_instance" "web" {
     ami = data.aws_ami.centos.id
     instance_type = "t2.micro"
     key_name = aws_key_pair.deployer3.key_name
-    provisioner "remote-exec" {
-        inline = [
-            "sudo yum install httpd -y",
-            "sudo systemctl start httpd"
-        ]
-
-    connection {
-        type    = "ssh"
-        user    = "centos"
-        private_key = file("~/.ssh/id_rsa")
-        host    = aws_instance.web.public_ip
-    }
-    }
-  provisioner "file" {
-      source = "user.sh"
-      destination = "/tmp/user.sh"
-      
-    connection {
-        type    = "ssh"
-        user    = "centos"
-        private_key = file("~/.ssh/id_rsa")
-        host    = aws_instance.web.public_ip
-    }
-  }
 }
