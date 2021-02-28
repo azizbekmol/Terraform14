@@ -13,3 +13,7 @@ data "aws_ami" "image" {
 
   owners = ["099720109477"] # Canonical
 }
+
+data "aws_availability_zones" "all" {
+
+}
