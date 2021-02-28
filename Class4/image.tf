@@ -14,6 +14,7 @@ data "aws_ami" "image" {
   owners = ["099720109477"] # Canonical
 }
 
-data "aws_availability_zones" "all" {
-
+data "aws_availability_zones" "all" {}
+output "AZ" {
+  value = data.aws_availability_zones.all.names
 }
