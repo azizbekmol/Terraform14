@@ -1,6 +1,3 @@
-# Build RDS Instance
-### Please copy paste below code
-```
 module "db" {
     source = "../"
     region = "us-east-1"
@@ -42,4 +39,3 @@ output DB_NAME {
 output endpoint {
   value = module.db.endpoint
 }
-```
