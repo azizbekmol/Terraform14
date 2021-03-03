@@ -1,6 +1,6 @@
 {
     "builders": [{
-    "ami_name": "centos-{{timestamp}}",
+    "ami_name": "golden-ami-{{timestamp}}",
     "instance_type": "t2.micro",
     "region": "us-east-1",
     "source_ami_filter": {
@@ -19,6 +19,14 @@
     }],
     "provisioners": [
         {
+        "type": "shell",
+            "inline":[
+                "sudo yum update -y",
+                "sudo yum install httpd -y",
+                "sudo systemctl start httpd"
+             ]
+        },
+    {
             "type": "breakpoint",
             "note": "Wait for you to delete"
         }
