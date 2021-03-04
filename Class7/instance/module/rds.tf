@@ -15,11 +15,8 @@ module "db" {
     engine_version      = "5.7"
     instance_class      = "db.t2.micro"
     username            = "foo"
-    password            = "foobarbaz"
     publicly_accessible = true
-
-
-    db_access = [
+        db_access = [
         "0.0.0.0/0"
     ]
 }
