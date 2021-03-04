@@ -12,9 +12,7 @@ variable "identifier" {
 variable "allocated_storage" {
 
 }
-variable "password" {
-    
-}
+
 variable "storage_type" {
 
 }
