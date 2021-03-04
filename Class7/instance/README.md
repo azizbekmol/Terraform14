@@ -18,7 +18,6 @@ module "db" {
     engine_version      = "5.7"
     instance_class      = "db.t2.micro"
     username            = "foo"
-    password            = "foobarbaz"
     publicly_accessible = true
 
 
@@ -43,3 +42,4 @@ output endpoint {
   value = module.db.endpoint
 }
 ```
+### Note: Password will be created in SSM
