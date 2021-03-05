@@ -1,6 +1,3 @@
-# Build RDS Instance
-### Please copy paste below code
-```
 module "db" {
     source = "../"
     region = "us-east-1"
@@ -17,11 +14,11 @@ module "db" {
     engine              = "mysql"
     engine_version      = "5.7"
     instance_class      = "db.t2.micro"
-    password            = "foobarbaz"
     username            = "foo"
+    password            = "foobarbaz"
     publicly_accessible = true
-
-
+        
+    
     db_access = [
         "0.0.0.0/0"
     ]
@@ -42,5 +39,3 @@ output DB_NAME {
 output endpoint {
   value = module.db.endpoint
 }
-```
-### Note: Password will be created in SSM
