@@ -17,7 +17,6 @@ module "db" {
     engine              = "mysql"
     engine_version      = "5.7"
     instance_class      = "db.t2.micro"
-    password            = "foobarbaz"
     username            = "foo"
     publicly_accessible = true
 
