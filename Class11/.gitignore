@@ -4,8 +4,8 @@ backend.tf
 # .tfstate files
 *.tfstate
 *.tfstate.*
-*.tfvars
-data.tf
+
+
 # Crash log files
 crash.log
 
