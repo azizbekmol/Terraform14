@@ -1,5 +1,5 @@
 module "aks" {
-	source = "azizbekmol/aks/azure"
+	source = "farrukh90/aks/azure"
 	cluster_name = "example-aks1"
 	kubernetes_version = "1.18.4"
 	node_pool_name = "node1"
